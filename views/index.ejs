@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div class="container">
+
+    <form action="add_todo" method="post">
+        <input type="text" name = "name" placeholder="Задача">
+        <input type="submit" value="Добавить новую задачу">
+    </form>
+
+    <ul>
+        <% for(let todo in todos) {%>
+        <li>
+            <%=  todos[todo].name %>
+            <a href="delete/<%= todos[todo].id %>"><i class="material-icons">delete_forever</i></a>
+            <!--<a href="#" onclick="document.getElementById('id01').style.display='block'"><i class="material-icons">mode_edit</i></a>-->
+            <!--<div id="id01" class="w3-modal">-->
+                <!--<div class="w3-modal-content">-->
+                    <!--<div class="w3-container">-->
+                        <!--<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>-->
+                        <!--<form action="/edit/<%= todos[todo].id %>" method="POST">-->
+                            <!--<input type="text" name = "name_edit" placeholder="Задача">-->
+                            <!--<input type="submit" value="Изменить">-->
+                        <!--</form>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </li>
+        <% } %>
+    </ul>
+    <% if (todos.length >= 1) {%>
+    <b><p class="number">Количество задач: <%= todos.length %></p></b>
+    <% } %>
+</div>
+
+</body>
+</html>
