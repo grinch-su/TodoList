@@ -15,5 +15,5 @@ npm install
 npm start
 ```
 ```
-Open broser localhost:3000
+Open broser http://localhost:3000/
 ```
